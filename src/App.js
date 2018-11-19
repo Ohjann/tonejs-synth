@@ -19,8 +19,23 @@ class App extends Component {
     return 440 * Math.pow(Math.pow(2, 1/12), (note - 49));
   }
 
+  getRandomColour() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
+
+  changeBackgroundColor()
+  {
+    document.body.style.background = this.getRandomColour();
+  }
+
   handleClick(event, semiTone) {
     const note = this.calculateNote(semiTone);
+    this.changeBackgroundColor();
     this.synth.triggerAttackRelease(note, "8n");
   }
 
@@ -37,6 +52,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="synth">
+          <span>Tone.js</span>
           <div className="keys">
             { keys }
           </div>

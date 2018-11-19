@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Monoton');
+
 body {
   background: #f8f8f8;
+  transition: background 300ms linear;
 }
 
 .App {
@@ -7,7 +10,7 @@ body {
   margin-right: auto;
   width: 470px;
   margin-top: 300px;
-  border-bottom: 5px solid #d8d8d8;
+  border-bottom: 5px solid rgba(0, 0, 0, 0.1);
 }
 
 .synth {
@@ -17,6 +20,15 @@ body {
   border-radius: 0.15em;
   text-align: center;
   position: relative;
+}
+
+.synth span {
+  font-family: 'Monoton', cursive;
+  color: #bb1b5c;
+  display: block;
+  width: 4em;
+  font-size: 1.5em;
+  padding-left: 0.5em;
 }
 
 .keys {
